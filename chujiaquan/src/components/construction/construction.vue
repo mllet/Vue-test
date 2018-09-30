@@ -39,14 +39,6 @@
         ]
       };
     },
-    created() {
-      this.$http.get('/constructss').then((response) => {
-        response = response.body;
-        if (response.errno === ERR_OK) {
-          this.constructs = response.data;
-        }
-      });
-    },
     components: {
       ConstructList: constructlist
     }

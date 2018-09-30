@@ -57,18 +57,7 @@
             }
           ]
         };
-//      return {
-//        news: {}
-//      };
     },
-//    created() {
-//      this.$http.get('/newss').then((response) => {
-//        response = response.body;
-//        if (response.errno === ERR_OK) {
-//          this.news = response.data;
-//        }
-//      });
-//    }
     components: {
         ComNews: comnews
     }

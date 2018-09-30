@@ -12,52 +12,49 @@
 <script type="text/ecmascript-6">
   const ERR_OK = 0;
   export default {
+//    data() {
+//      return {
+//        products: [
+//          {
+//            id: '0',
+//            imgs: '../../../static/imges/product_zh.png',
+//            name: 'NG-I 二氧化钛（综合治理产品）'
+//          }, {
+//            id: '1',
+//            name: 'NG-C 二氧化钛（汽车专用）',
+//            imgs: '../../../static/imges/product_qc.png'
+//          }, {
+//            id: '2',
+//            name: 'NG-Y 二氧化钛（孕婴专用）',
+//            imgs: '../../../static/imges/product_yy.png'
+//          }, {
+//            id: '3',
+//            name: 'NG-B 二氧化钛（布艺专用）',
+//            imgs: '../../../static/imges/product_by.png'
+//          }, {
+//            id: '4',
+//            name: '除醛剂',
+//            imgs: '../../../static/imges/product_cq.png'
+//          }, {
+//            id: '5',
+//            name: '除苯剂',
+//            imgs: '../../../static/imges/product_cb.png'
+//          }, {
+//            id: '6',
+//            name: '高温熏蒸液',
+//            imgs: '../../../static/imges/product_gw.png'
+//          }, {
+//            id: '7',
+//            name: 'NGCTVOC去除剂',
+//            imgs: '../../../static/imges/product_tovc.png'
+//          }
+//        ]
+//      };
+//    },
     data() {
-      return {
-        products: [
-          {
-            id: '0',
-            imgs: '../../../static/imges/product_zh.png',
-            name: 'NG-I 二氧化钛（综合治理产品）'
-          }, {
-            id: '1',
-            name: 'NG-C 二氧化钛（汽车专用）',
-            imgs: '../../../static/imges/product_qc.png'
-          }, {
-            id: '2',
-            name: 'NG-Y 二氧化钛（孕婴专用）',
-            imgs: '../../../static/imges/product_yy.png'
-          }, {
-            id: '3',
-            name: 'NG-B 二氧化钛（布艺专用）',
-            imgs: '../../../static/imges/product_by.png'
-          }, {
-            id: '4',
-            name: '除醛剂',
-            imgs: '../../../static/imges/product_cq.png'
-          }, {
-            id: '5',
-            name: '除苯剂',
-            imgs: '../../../static/imges/product_cb.png'
-          }, {
-            id: '6',
-            name: '高温熏蒸液',
-            imgs: '../../../static/imges/product_gw.png'
-          }, {
-            id: '7',
-            name: 'NGCTVOC去除剂',
-            imgs: '../../../static/imges/product_tovc.png'
-          }
-        ]
-      };
-    },
-    created() {
-      this.$http.get('/productss').then((response) => {
-        response = response.body;
-        if (response.errno === ERR_OK) {
-          this.products = response.data;
-        }
-      });
+        return {
+            products: []
+        };
     }
   };
 </script>

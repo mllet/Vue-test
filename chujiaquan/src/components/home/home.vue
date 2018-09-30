@@ -101,7 +101,6 @@
 
 <script type="text/ecmascript-6">
   import Swiper from 'swiper';
-  const ERR_OK = 0;
   export default {
     data() {
       return {
@@ -141,14 +140,6 @@
           }
         ]
       };
-    },
-    created() {
-      this.$http.get('/homes').then((response) => {
-        response = response.body;
-        if (response.errno === ERR_OK) {
-          this.products = response.data;
-        }
-      });
     },
     mounted: function () {
       this.swippertab();

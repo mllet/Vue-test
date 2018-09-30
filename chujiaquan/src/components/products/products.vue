@@ -51,14 +51,6 @@
         ]
       };
     },
-    created() {
-      this.$http.get('/productss').then((response) => {
-        response = response.body;
-        if (response.errno === ERR_OK) {
-          this.products = response.data;
-        }
-      });
-    },
     components: {
       LeftList: leftlist
     }

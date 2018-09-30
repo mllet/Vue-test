@@ -40,14 +40,6 @@
             ]
           };
       },
-      created() {
-          this.$http.get('/cases').then((response) => {
-              response = response.data;
-              if (response.errno === ERR_OK) {
-                  this.cases = response.data;
-              }
-          });
-      },
       components: {
         CaseList: caselist
       }
