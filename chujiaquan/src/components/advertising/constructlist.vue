@@ -3,11 +3,11 @@
     <h3>客户案例</h3>
     <ul>
       <li v-for="items in constructlist" :key="items.id">
-        <router-link :to="'/construct/'+items.id">{{ items.title }}</router-link>
+        <router-link :to="'/construction/constructs/id/'+items.id">{{ items.title }}</router-link>
       </li>
-      <li v-if="$route.params.id">
-        <router-link to="/construction">更多</router-link>
-      </li>
+      <!--<li v-if="$route.params.id">-->
+        <!--<router-link to="/construction">更多</router-link>-->
+      <!--</li>-->
     </ul>
   </div>
 </template>

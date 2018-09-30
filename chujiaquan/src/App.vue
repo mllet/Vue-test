@@ -7,13 +7,13 @@
           <router-link to="/home">网站首页</router-link>
         </div>
         <div class="tab-item">
-          <router-link to="/products">产品展示</router-link>
+          <router-link to="/products/product">产品展示</router-link>
         </div>
         <div class="tab-item">
-          <router-link to="/construction">施工现场</router-link>
+          <router-link to="/construction/constructs">施工现场</router-link>
         </div>
         <div class="tab-item">
-          <router-link to="/cases">客户案例</router-link>
+          <router-link to="/cases/case">客户案例</router-link>
         </div>
         <div class="tab-item">
           <router-link to="/news">资讯信息</router-link>

@@ -1,37 +1,30 @@
 <template>
-  <div class="my-wrapper">
-    <div class="banner"><img src="../../../static/imges/about-banner.jpg"/></div>
-    <div class="wrapper-content">
-      <LeftList :products="products"></LeftList>
-      <div class="products-rig">
-        <h2>产品展示</h2>
-        <div class="product-detail">
-          <div class="title">{{ products[$route.params.id].name }}</div>
-          <img :src="products[$route.params.id].imgs">
-          <div v-if="products[$route.params.id].description" class="description">
-            <h5>【产品描述】</h5>
-            <p v-html="products[$route.params.id].description"></p>
-          </div>
-          <div v-if="products[$route.params.id].func" class="description">
-            <h5>【产品功能】</h5>
-            <p v-html=" products[$route.params.id].func "></p>
-          </div>
-          <div v-if="products[$route.params.id].application" class="description">
-            <h5>【应用】</h5>
-            <p v-html="products[$route.params.id].application"></p>
-          </div>
-          <div v-if="products[$route.params.id].useMethod" class="description">
-            <h5>【使用方法】</h5>
-            <p v-html="products[$route.params.id].useMethod"></p>
-          </div>
-        </div>
+  <div class="products-rig">
+    <h2>产品展示</h2>
+    <div class="product-detail">
+      <div class="title">{{ products[this.$route.params.id].name }}</div>
+      <img :src="products[this.$route.params.id].imgs">
+      <div v-if="products[this.$route.params.id].description" class="description">
+        <h5>【产品描述】</h5>
+        <p v-html="products[this.$route.params.id].description"></p>
+      </div>
+      <div v-if="products[this.$route.params.id].func" class="description">
+        <h5>【产品功能】</h5>
+        <p v-html=" products[this.$route.params.id].func "></p>
+      </div>
+      <div v-if="products[this.$route.params.id].application" class="description">
+        <h5>【应用】</h5>
+        <p v-html="products[this.$route.params.id].application"></p>
+      </div>
+      <div v-if="products[this.$route.params.id].useMethod" class="description">
+        <h5>【使用方法】</h5>
+        <p v-html="products[this.$route.params.id].useMethod"></p>
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import leftlist from '../../components/advertising/leftlist.vue';
   export default {
     data() {
       return {
@@ -103,50 +96,44 @@
           }
         ]
       };
-    },
-    components: {
-      LeftList: leftlist
     }
   };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/base.styl";
-  .my-wrapper
-    .wrapper-content
-      .products-rig
-        width :70%
-        float :right
-        margin-bottom :30px
-        border :1px solid #eee
-        h2
-          height: 28px;
-          line-height: 28px;
-          padding-left :15px
-          border-left: 5px solid #018b3e;
-          border-right: 1px solid transparent;
-          border-bottom: 3px solid transparent;
-          border-top: 3px solid transparent;
-        .product-detail
-          margin-bottom :30px
-          .title
-            width: 100%;
-            margin: 15px auto;
-            font-size: 25px;
-            color: #333333;
-            text-align: center;
-          img
-            height :300px
-            width :300px
-            display :block
-            margin: 15px auto;
-          .description
-            padding :0 30px 20px 30px
-            h5
-              line-height: 1.5;
-              font-weight :bold
-              font-size: 14px
-            p
-              line-height :2
-              font-size :14px
+  .products-rig
+    width :70%
+    float :right
+    margin-bottom :30px
+    border :1px solid #eee
+    h2
+      height: 28px;
+      line-height: 28px;
+      padding-left :15px
+      border-left: 5px solid #018b3e;
+      border-right: 1px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid transparent;
+    .product-detail
+      margin-bottom :30px
+      .title
+        width: 100%;
+        margin: 15px auto;
+        font-size: 25px;
+        color: #333333;
+        text-align: center;
+      img
+        height :300px
+        width :300px
+        display :block
+        margin: 15px auto;
+      .description
+        padding :0 30px 20px 30px
+        h5
+          line-height: 1.5;
+          font-weight :bold
+          font-size: 14px
+        p
+          line-height :2
+          font-size :14px
 </style>

@@ -3,7 +3,7 @@
     <h3>产品展示</h3>
     <ul>
       <li v-for="items in product" :key="items.id">
-        <router-link :to="'/product/'+items.id">{{ items.name }}</router-link>
+        <router-link :to="'/products/product/id/'+items.id">{{ items.name }}</router-link>
       </li>
       <li v-if="$route.params.id">
         <router-link to="/products">更多</router-link>

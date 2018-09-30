@@ -1,23 +1,21 @@
 <template>
-  <div class="my-wrapper">
-    <div class="banner"><img src="../../../static/imges/about-banner.jpg"/></div>
-    <div class="wrapper-content">
-      <ConstructList :constructs="constructs"></ConstructList>
-      <div class="wrapper-rig">
-        <h2>施工案例<span></span></h2>
-        <div class="construction-items" >
-          <h5>{{ constructs[$route.params.id-1].title }}</h5>
-          <div class="img-del">
-            <img :src="constructs[$route.params.id-1].img">
+  <div class="wrapper-rig">
+    <h2>施工现场<span></span></h2>
+    <div class="construction-items">
+      <div class="construction-item"  v-for="item in constructs" :key="item.id">
+        <router-link :to='"/construction/constructs/id/"+item.id'>
+          <div class="img">
+            <img :src="item.img">
           </div>
-        </div>
+          <span class="title">{{ item.title }}</span>
+          <span class="time">{{ item.time }}</span>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import constructlist from '../advertising/constructlist.vue';
   const ERR_OK = 0;
   export default {
     data() {
@@ -49,34 +47,38 @@
     },
     created() {
       this.$http.get('/constructss').then((response) => {
-        response = response.data;
+        response = response.body;
         if (response.errno === ERR_OK) {
           this.constructs = response.data;
         }
       });
-    },
-    components: {
-      ConstructList: constructlist
     }
   };
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style  lang="stylus" rel="stylesheet/stylus">
   .my-wrapper
     .wrapper-content
       .wrapper-rig
-        h5
-          height: 28px;
-          line-height: 28px;
-          color: #333;
-          text-align :center
-          font-size: 22px;
         .construction-items
           padding: 0 0 30px 20px
-          .img-del
-            width: 400px;
-            margin: 20px auto;
-            img
-              height :200px
-              width :400px;
+          .construction-item
+            margin-bottom:10px;
+            padding: 20px 4px 4px 4px;
+            position :relative
+            border-bottom: 1px dashed #eee;
+            .img
+              padding :3px
+              width:100px;
+              height:100px;
+              display: inline-block;
+              img
+                width :100%
+                height :100%
+            .title
+              margin-left :30px
+              vertical-align :top
+            .time
+              position :absolute
+              right :30px
 </style>

@@ -1,24 +1,21 @@
 <template>
-  <div class="my-wrapper">
-    <div class="banner"><img src="../../../static/imges/about-banner.jpg"/></div>
-    <div class="wrapper-content">
-      <CaseList :cases="cases"></CaseList>
-      <div class="wrapper-rig">
-        <h2>客户案例<span></span></h2>
-        <div class="cases-items" >
-          <h5>{{ cases[$route.params.id-1].title }}</h5>
-          <div class="img-del">
-            <img :src="cases[$route.params.id-1].img">
+  <div class="wrapper-rig">
+    <h2>客户案例<span></span></h2>
+    <div class="cases-items" v-for="item in cases" :key="item.id">
+      <router-link :to='"/cases/case/id/"+item.id'>
+        <div class="cases-item">
+          <div class=img>
+            <img :src="item.img">
           </div>
-          <p>{{ cases[$route.params.id-1].description }}</p>
+          <span class=title>{{ item.title }}</span>
+          <span class=time>{{ item.time }}</span>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import caselist from '../advertising/caselist.vue';
   const ERR_OK = 0;
   export default {
     data() {
@@ -59,29 +56,31 @@
           this.cases = response.data;
         }
       });
-    },
-    components: {
-      CaseList: caselist
     }
   };
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
-  .my-wrapper
-    .wrapper-content
-      .wrapper-rig
-        h5
-          height: 28px;
-          line-height: 28px;
-          color: #333;
-          text-align :center
-          font-size: 22px;
-        .cases-items
-          padding: 0 0 30px 20px
-          .img-del
-            width: 400px;
-            margin: 20px auto;
-            img
-              height :200px
-              width :400px;
+<style lang="stylus">
+  .wrapper-rig
+    .cases-items
+      padding: 0 0 30px 20px
+      .cases-item
+        margin-bottom:10px;
+        padding: 20px 4px 4px 4px;
+        position :relative
+        border-bottom: 1px dashed #eee;
+        .img
+          padding :3px
+          width:100px;
+          height:100px;
+          display: inline-block;
+          img
+            width :100%
+            height :100%
+        .title
+          margin-left :30px
+          vertical-align :top
+        .time
+          position :absolute
+          right :30px
 </style>

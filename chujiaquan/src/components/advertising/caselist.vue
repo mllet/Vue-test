@@ -3,11 +3,11 @@
     <h3>客户案例</h3>
     <ul>
       <li v-for="items in caseitem" :key="items.id">
-        <router-link :to="'/cases/'+items.id">{{ items.title }}</router-link>
+        <router-link :to="'/cases/case/id/'+items.id">{{ items.title }}</router-link>
       </li>
-      <li v-if="$route.params.id">
-        <router-link to="/cases">更多</router-link>
-      </li>
+      <!--<li v-if="$route.params.id">-->
+        <!--<router-link to="/cases/case">更多</router-link>-->
+      <!--</li>-->
     </ul>
   </div>
 </template>

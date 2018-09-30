@@ -4,20 +4,7 @@
     <div class="banner"><img src="../../../static/imges/about-banner.jpg"/></div>
     <div class="wrapper-content">
       <CaseList :cases="cases"></CaseList>
-      <div class="wrapper-rig">
-        <h2>客户案例<span></span></h2>
-        <div class="cases-items" v-for="item in cases" :key="item.id">
-          <router-link :to='"/cases/"+item.id'>
-            <div class="cases-item">
-              <div class=img>
-                <img :src="item.img">
-              </div>
-              <span class=title>{{ item.title }}</span>
-              <span class=time>{{ item.time }}</span>
-            </div>
-          </router-link>
-        </div>
-      </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -69,28 +56,4 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/base.styl";
-  .my-wrapper
-    .wrapper-content
-      .wrapper-rig
-        .cases-items
-          padding: 0 0 30px 20px
-          .cases-item
-            margin-bottom:10px;
-            padding: 20px 4px 4px 4px;
-            position :relative
-            border-bottom: 1px dashed #eee;
-            .img
-              padding :3px
-              width:100px;
-              height:100px;
-              display: inline-block;
-              img
-                width :100%
-                height :100%
-            .title
-              margin-left :30px
-              vertical-align :top
-            .time
-              position :absolute
-              right :30px
 </style>
